@@ -1,0 +1,19 @@
+{
+  "placeholder": "this file should be replaced with a dev or prod version later. All other fields will be here.",
+  "environment": "dev or prod",
+  "version": "version number",
+  "logging_endpoint": "",
+  "sql": {
+    "connectionString": "",
+    "username": "",
+    "password": "",
+    "address": "",
+    "port": "",
+    "db_name": ""
+  },
+  "google": {
+    "email": "",
+    "password": ""
+  },
+  "...": ""
+}

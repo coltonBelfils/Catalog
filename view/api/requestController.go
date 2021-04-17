@@ -6,10 +6,10 @@ import (
 
 func StartRequestController() {
 	http.HandleFunc("/info", GetDocumentation) //html api documentation
-	http.HandleFunc("/api/check", Check)
+	http.HandleFunc("/api/check", Check)//Working, called to see if the api is online
 	http.HandleFunc("/api/editRanking", EditRanking)
-	http.HandleFunc("/api/getUser", GetUser)
-	http.HandleFunc("/api/newUser", NewUser)
+	http.HandleFunc("/api/getUser", GetUser)//Working
+	http.HandleFunc("/api/newUser", NewUser)//Provisionally working. Auth not implemented yet, email verification not implemented yet
 	http.HandleFunc("/api/editTopic", EditTopic)
 	http.HandleFunc("/api/getRanking", GetRanking)
 	http.HandleFunc("/api/getTopic", GetTopic)
