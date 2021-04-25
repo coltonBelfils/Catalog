@@ -17,9 +17,9 @@ func GetUser(w http.ResponseWriter, r *http.Request) { //the uuid of the user sh
 
 	if r.Method == "GET" {
 		queryValues := r.URL.Query()
-		userName := queryValues.Get("username")
+		username := queryValues.Get("username")
 
-		query := queries.UserQueryByUsername(userName)
+		query := queries.UserQueryByUsername(username)
 		connErr := connector.SendQuery(query)
 		if connErr != nil {
 			nConnErr := niceErrors.FromError(connErr)
@@ -28,16 +28,16 @@ func GetUser(w http.ResponseWriter, r *http.Request) { //the uuid of the user sh
 		}
 
 		if len(query.Results) == 0 {
-			JsonRequestErrorResponder(w, niceErrors.New("userError", "Unable to find user with username: "+userName, niceErrors.INFO), 404)
+			JsonRequestErrorResponder(w, niceErrors.New("userError", "Unable to find user with username: "+username, niceErrors.INFO), 404)
 			return
 		} else if len(query.Results) < 1 {
-			JsonRequestErrorResponder(w, niceErrors.New("Multiple users with username: "+userName, "Unable to find user with username: "+userName, niceErrors.ERROR), 500)
+			JsonRequestErrorResponder(w, niceErrors.New("Multiple users with username: "+username, "Unable to find user with username: "+username, niceErrors.ERROR), 500)
 			return
 		}
 
 		jsonConv, martialErr := json.Marshal(query.Results[0])
 		if martialErr != nil {
-			JsonRequestErrorResponder(w, niceErrors.New(martialErr.Error(), "Unable to find user with username: "+userName, niceErrors.ERROR), 500)
+			JsonRequestErrorResponder(w, niceErrors.New(martialErr.Error(), "Unable to find user with username: "+username, niceErrors.ERROR), 500)
 		}
 
 		JsonRequestResponder(w, string(jsonConv), 200)

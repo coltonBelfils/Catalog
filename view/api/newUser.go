@@ -44,7 +44,7 @@ func NewUser(w http.ResponseWriter, r *http.Request) { //the uuid of the user sh
 
 		jsonConv, martialErr := json.Marshal(userCreated)
 		if martialErr != nil {
-			JsonRequestErrorResponder(w, niceErrors.New(martialErr.Error(), "User should be created but  an error occurred", niceErrors.ERROR), 500)
+			JsonRequestErrorResponder(w, niceErrors.New(martialErr.Error(), "User should be created but an error occurred", niceErrors.ERROR), 500)
 			return
 		}
 

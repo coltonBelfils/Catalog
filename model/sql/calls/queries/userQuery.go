@@ -64,14 +64,14 @@ func (q *UserQuery) RowsProcessor(rows *sql.Rows) *niceErrors.NiceErrors {
 
 //Queries
 
-func UserQueryById(id uuid.UUID) *UserQuery {
+func UserQueryById(userId uuid.UUID) *UserQuery {
 	return &UserQuery{
 		queryString: `
 SELECT u.user_id, u.email, u.email_verified, u.username, u.date_created
 FROM user as u
 WHERE u.user_id = ?;
 `,
-		queryParameters: []interface{}{id},
+		queryParameters: []interface{}{userId},
 	}
 }
 
