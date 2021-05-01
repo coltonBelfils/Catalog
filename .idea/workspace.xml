@@ -2,15 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="00f64e74-f24c-41b1-a596-4726df9f5c9e" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Dockerfile" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/model/dataTypes/topic.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/model/sql/calls/queries/topicQuery.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/view/api/getAdminTopics.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/runConfigurations/Docker.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/controler/createUser.go" beforeDir="false" afterPath="$PROJECT_DIR$/controler/createUser.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/sql/calls/queries/userQuery.go" beforeDir="false" afterPath="$PROJECT_DIR$/model/sql/calls/queries/userQuery.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/view/api/getUser.go" beforeDir="false" afterPath="$PROJECT_DIR$/view/api/getUser.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/view/api/newUser.go" beforeDir="false" afterPath="$PROJECT_DIR$/view/api/newUser.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/Dockerfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/main.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/view/api/requestController.go" beforeDir="false" afterPath="$PROJECT_DIR$/view/api/requestController.go" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -73,6 +68,7 @@
     <property name="DatabaseDriversLRU" value="mysql" />
     <property name="DefaultGoTemplateProperty" value="Go File" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="configurable.Global.GOPATH.is.expanded" value="true" />
     <property name="configurable.Module.GOPATH.is.expanded" value="false" />
@@ -96,7 +92,7 @@
       <recent name="$PROJECT_DIR$/view/api" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Docker.Docker">
     <configuration name="go build Catalog" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
       <module name="Catalog" />
       <working_directory value="$PROJECT_DIR$" />
@@ -105,11 +101,37 @@
       <package value="Catalog" />
       <method v="2" />
     </configuration>
+    <list>
+      <item itemvalue="Docker.Docker" />
+      <item itemvalue="Go Build.go build Catalog" />
+    </list>
     <recent_temporary>
       <list>
         <item itemvalue="Go Build.go build Catalog" />
       </list>
     </recent_temporary>
+  </component>
+  <component name="ServiceViewManager">
+    <option name="viewStates">
+      <list>
+        <serviceView>
+          <treeState>
+            <expand>
+              <path>
+                <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
+                <item name="Docker" type="9fbbdea:ServiceModel$ServiceNode" />
+              </path>
+              <path>
+                <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
+                <item name="Docker" type="9fbbdea:ServiceModel$ServiceNode" />
+                <item name="Containers" type="9fbbdea:ServiceModel$ServiceNode" />
+              </path>
+            </expand>
+            <select />
+          </treeState>
+        </serviceView>
+      </list>
+    </option>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
@@ -119,6 +141,14 @@
     <proxy>direct</proxy>
   </component>
   <component name="WindowStateProjectService">
+    <state x="560" y="274" key="#Docker" timestamp="1619905640307">
+      <screen x="0" y="25" width="1920" height="1175" />
+    </state>
+    <state x="560" y="274" key="#Docker/0.25.1920.1175@0.25.1920.1175" timestamp="1619905640307" />
+    <state x="667" y="162" key="#Dockerfile" timestamp="1619905642426">
+      <screen x="0" y="25" width="1920" height="1175" />
+    </state>
+    <state x="667" y="162" key="#Dockerfile/0.25.1920.1175@0.25.1920.1175" timestamp="1619905642426" />
     <state x="560" y="276" key="#SQL_Dialects" timestamp="1616792428655">
       <screen x="0" y="0" width="1920" height="1200" />
     </state>
@@ -127,34 +157,35 @@
       <screen x="0" y="0" width="1920" height="1200" />
     </state>
     <state x="0" y="25" width="1920" height="1175" key="#SQL_Resolution_Scopes/0.0.1920.1200@0.0.1920.1200" timestamp="1616895778310" />
-    <state x="0" y="25" width="1920" height="1175" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1616885205169">
-      <screen x="0" y="0" width="1920" height="1200" />
+    <state x="0" y="49" width="1920" height="1175" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1619911144531">
+      <screen x="0" y="25" width="1920" height="1175" />
     </state>
     <state x="0" y="25" width="1920" height="1175" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1200@0.0.1920.1200" timestamp="1616885205169" />
-    <state width="1878" height="318" key="GridCell.Tab.0.bottom" timestamp="1619385565839">
+    <state x="0" y="49" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.25.1920.1175@0.25.1920.1175" timestamp="1619911144531" />
+    <state width="1878" height="318" key="GridCell.Tab.0.bottom" timestamp="1619905642604">
       <screen x="0" y="25" width="1920" height="1175" />
     </state>
     <state width="1878" height="327" key="GridCell.Tab.0.bottom/0.0.1920.1200@0.0.1920.1200" timestamp="1616884983317" />
     <state width="1638" height="270" key="GridCell.Tab.0.bottom/0.25.1680.1025@0.25.1680.1025" timestamp="1618693919454" />
-    <state width="1878" height="318" key="GridCell.Tab.0.bottom/0.25.1920.1175@0.25.1920.1175" timestamp="1619385565839" />
-    <state width="1878" height="318" key="GridCell.Tab.0.center" timestamp="1619385565838">
+    <state width="1878" height="318" key="GridCell.Tab.0.bottom/0.25.1920.1175@0.25.1920.1175" timestamp="1619905642604" />
+    <state width="1878" height="318" key="GridCell.Tab.0.center" timestamp="1619905642603">
       <screen x="0" y="25" width="1920" height="1175" />
     </state>
     <state width="1878" height="327" key="GridCell.Tab.0.center/0.0.1920.1200@0.0.1920.1200" timestamp="1616884983316" />
     <state width="1638" height="270" key="GridCell.Tab.0.center/0.25.1680.1025@0.25.1680.1025" timestamp="1618693919453" />
-    <state width="1878" height="318" key="GridCell.Tab.0.center/0.25.1920.1175@0.25.1920.1175" timestamp="1619385565838" />
-    <state width="1878" height="318" key="GridCell.Tab.0.left" timestamp="1619385565838">
+    <state width="1878" height="318" key="GridCell.Tab.0.center/0.25.1920.1175@0.25.1920.1175" timestamp="1619905642603" />
+    <state width="1878" height="318" key="GridCell.Tab.0.left" timestamp="1619905642603">
       <screen x="0" y="25" width="1920" height="1175" />
     </state>
     <state width="1878" height="327" key="GridCell.Tab.0.left/0.0.1920.1200@0.0.1920.1200" timestamp="1616884983316" />
     <state width="1638" height="270" key="GridCell.Tab.0.left/0.25.1680.1025@0.25.1680.1025" timestamp="1618693919453" />
-    <state width="1878" height="318" key="GridCell.Tab.0.left/0.25.1920.1175@0.25.1920.1175" timestamp="1619385565838" />
-    <state width="1878" height="318" key="GridCell.Tab.0.right" timestamp="1619385565839">
+    <state width="1878" height="318" key="GridCell.Tab.0.left/0.25.1920.1175@0.25.1920.1175" timestamp="1619905642603" />
+    <state width="1878" height="318" key="GridCell.Tab.0.right" timestamp="1619905642603">
       <screen x="0" y="25" width="1920" height="1175" />
     </state>
     <state width="1878" height="327" key="GridCell.Tab.0.right/0.0.1920.1200@0.0.1920.1200" timestamp="1616884983317" />
     <state width="1638" height="270" key="GridCell.Tab.0.right/0.25.1680.1025@0.25.1680.1025" timestamp="1618693919454" />
-    <state width="1878" height="318" key="GridCell.Tab.0.right/0.25.1920.1175@0.25.1920.1175" timestamp="1619385565839" />
+    <state width="1878" height="318" key="GridCell.Tab.0.right/0.25.1920.1175@0.25.1920.1175" timestamp="1619905642603" />
     <state x="0" y="25" width="1920" height="1175" key="SettingsEditor" timestamp="1616885472122">
       <screen x="0" y="0" width="1920" height="1200" />
     </state>
@@ -163,6 +194,10 @@
       <screen x="0" y="0" width="1920" height="1200" />
     </state>
     <state width="200" height="441" key="SqlResolveConfigurable/0.0.1920.1200@0.0.1920.1200" timestamp="1616895775862" />
+    <state x="721" y="345" key="com.intellij.docker.deployment.ui.DockerPortBindingsField.v173.dialogSize" timestamp="1619907002757">
+      <screen x="0" y="25" width="1920" height="1175" />
+    </state>
+    <state x="721" y="345" key="com.intellij.docker.deployment.ui.DockerPortBindingsField.v173.dialogSize/0.25.1920.1175@0.25.1920.1175" timestamp="1619907002757" />
     <state x="625" y="273" width="670" height="691" key="search.everywhere.popup" timestamp="1616885403212">
       <screen x="0" y="0" width="1920" height="1200" />
     </state>

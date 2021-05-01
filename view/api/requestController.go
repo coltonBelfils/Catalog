@@ -18,5 +18,5 @@ func StartRequestController() {
 	http.HandleFunc("/api/searchUsers", SearchUsers)
 	http.HandleFunc("/api/getAdminTopics", GetAdminTopics)//Provisionally working. Auth not implemented yet
 
-	_ = http.ListenAndServe(":8080", nil)
+	_ = http.ListenAndServe(":80", nil)
 }
