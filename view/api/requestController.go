@@ -6,7 +6,7 @@ import (
 
 func StartRequestController() {
 	http.HandleFunc("/", GetHomepage) //html home page
-	http.HandleFunc("/info", GetDocumentation) //html api documentation
+	http.HandleFunc("/documentation", GetDocumentation) //html api documentation
 	http.HandleFunc("/api/check", Check)//Working, called to see if the api is online
 	http.HandleFunc("/api/editRanking", EditRanking)
 	http.HandleFunc("/api/getUser", GetUser)//Provisionally working. Auth not implemented yet

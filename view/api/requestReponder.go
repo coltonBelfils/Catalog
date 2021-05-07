@@ -34,4 +34,6 @@ func HtmlRequestResponder(w http.ResponseWriter, req *http.Request, htmlTitle st
 	}
 
 	http.ServeContent(w, req, htmlTitle, time.Time{}, content)
+
+	return nil
 }
