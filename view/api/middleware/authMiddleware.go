@@ -2,13 +2,13 @@ package middleware
 
 import (
 	"Catalog/niceErrors"
+	re "Catalog/view/api/responder"
 	"context"
 	"encoding/json"
 	"fmt"
 	"github.com/form3tech-oss/jwt-go"
 	"net/http"
 	"strings"
-	re "Catalog/view/api/responder"
 )
 
 type Jwks struct {

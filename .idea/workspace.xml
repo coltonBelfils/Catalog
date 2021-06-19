@@ -2,29 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="00f64e74-f24c-41b1-a596-4726df9f5c9e" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/view/api/controller/requestController.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/view/api/middleware/authMiddleware.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/view/api/middleware/corsMiddleware.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/go.mod" beforeDir="false" afterPath="$PROJECT_DIR$/go.mod" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/go.sum" beforeDir="false" afterPath="$PROJECT_DIR$/go.sum" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/main.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/niceErrors/niceErrors.go" beforeDir="false" afterPath="$PROJECT_DIR$/niceErrors/niceErrors.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/view/api/check.go" beforeDir="false" afterPath="$PROJECT_DIR$/view/api/endpoints/check.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/view/api/editRanking.go" beforeDir="false" afterPath="$PROJECT_DIR$/view/api/endpoints/editRanking.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/view/api/editTopic.go" beforeDir="false" afterPath="$PROJECT_DIR$/view/api/endpoints/editTopic.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/view/api/getAdminTopics.go" beforeDir="false" afterPath="$PROJECT_DIR$/view/api/endpoints/getAdminTopics.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/view/api/getDocumentation.go" beforeDir="false" afterPath="$PROJECT_DIR$/view/api/endpoints/getDocumentation.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/view/api/getHomepage.go" beforeDir="false" afterPath="$PROJECT_DIR$/view/api/endpoints/getHomepage.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/view/api/getRanking.go" beforeDir="false" afterPath="$PROJECT_DIR$/view/api/endpoints/getRanking.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/view/api/getTopic.go" beforeDir="false" afterPath="$PROJECT_DIR$/view/api/endpoints/getTopic.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/view/api/getUser.go" beforeDir="false" afterPath="$PROJECT_DIR$/view/api/endpoints/getUser.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/view/api/newTopic.go" beforeDir="false" afterPath="$PROJECT_DIR$/view/api/endpoints/newTopic.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/view/api/newUser.go" beforeDir="false" afterPath="$PROJECT_DIR$/view/api/endpoints/newUser.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/view/api/requestController.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/view/api/requestReponder.go" beforeDir="false" afterPath="$PROJECT_DIR$/view/api/responder/requestReponder.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/view/api/searchTopics.go" beforeDir="false" afterPath="$PROJECT_DIR$/view/api/endpoints/searchTopics.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/view/api/searchUsers.go" beforeDir="false" afterPath="$PROJECT_DIR$/view/api/endpoints/searchUsers.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/view/api/middleware/corsMiddleware.go" beforeDir="false" afterPath="$PROJECT_DIR$/view/api/middleware/corsMiddleware.go" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -135,11 +113,6 @@
               <path>
                 <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
                 <item name="Docker" type="9fbbdea:ServiceModel$ServiceNode" />
-              </path>
-              <path>
-                <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
-                <item name="Docker" type="9fbbdea:ServiceModel$ServiceNode" />
-                <item name="Containers" type="9fbbdea:ServiceModel$ServiceNode" />
               </path>
             </expand>
             <select />
