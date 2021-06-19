@@ -1,9 +1,10 @@
-package api
+package endpoints
 
 import (
 	"Catalog/model/sql/calls/queries"
 	"Catalog/model/sql/connector"
 	"Catalog/niceErrors"
+	"Catalog/view/api/responder"
 	"encoding/json"
 	"net/http"
 )
@@ -23,26 +24,26 @@ func GetUser(w http.ResponseWriter, r *http.Request) { //the uuid of the user sh
 		connErr := connector.SendQuery(query)
 		if connErr != nil {
 			nConnErr := niceErrors.FromError(connErr)
-			JsonRequestErrorResponder(w, nConnErr, 500)
+			responder.JsonRequestErrorResponder(w, nConnErr, 500)
 			return
 		}
 
 		if len(query.Results) == 0 {
-			JsonRequestErrorResponder(w, niceErrors.New("userError", "Unable to find user with username: "+username, niceErrors.INFO), 404)
+			responder.JsonRequestErrorResponder(w, niceErrors.New("userError", "Unable to find user with username: "+username, niceErrors.INFO), 404)
 			return
 		} else if len(query.Results) < 1 {
-			JsonRequestErrorResponder(w, niceErrors.New("Multiple users with username: "+username, "Unable to find user with username: "+username, niceErrors.ERROR), 500)
+			responder.JsonRequestErrorResponder(w, niceErrors.New("Multiple users with username: "+username, "Unable to find user with username: "+username, niceErrors.ERROR), 500)
 			return
 		}
 
 		jsonConv, martialErr := json.Marshal(query.Results[0])
 		if martialErr != nil {
-			JsonRequestErrorResponder(w, niceErrors.New(martialErr.Error(), "Unable to find user with username: "+username, niceErrors.ERROR), 500)
+			responder.JsonRequestErrorResponder(w, niceErrors.New(martialErr.Error(), "Unable to find user with username: "+username, niceErrors.ERROR), 500)
 		}
 
-		JsonRequestResponder(w, string(jsonConv), 200)
+		responder.JsonRequestResponder(w, string(jsonConv), 200)
 
 	} else {
-		JsonRequestErrorResponder(w, niceErrors.New("user called getUser with "+r.Method, r.Method+" calls are not allowed", niceErrors.WARN), 405)
+		responder.JsonRequestErrorResponder(w, niceErrors.New("user called getUser with "+r.Method, r.Method+" calls are not allowed", niceErrors.WARN), 405)
 	}
 }

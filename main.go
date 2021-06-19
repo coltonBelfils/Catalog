@@ -1,9 +1,9 @@
 package main
 
 import (
-	"Catalog/view/api"
+	"Catalog/view/api/controller"
 )
 
 func main() {
-	api.StartRequestController()
+	controller.RequestController()
 }
