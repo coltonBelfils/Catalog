@@ -2,9 +2,29 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="00f64e74-f24c-41b1-a596-4726df9f5c9e" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/view/api/controller/requestController.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/view/api/middleware/authMiddleware.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/view/api/middleware/corsMiddleware.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/view/api/requestController.go" beforeDir="false" afterPath="$PROJECT_DIR$/view/api/requestController.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/view/api/requestReponder.go" beforeDir="false" afterPath="$PROJECT_DIR$/view/api/requestReponder.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/go.mod" beforeDir="false" afterPath="$PROJECT_DIR$/go.mod" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/go.sum" beforeDir="false" afterPath="$PROJECT_DIR$/go.sum" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/main.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/niceErrors/niceErrors.go" beforeDir="false" afterPath="$PROJECT_DIR$/niceErrors/niceErrors.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/view/api/check.go" beforeDir="false" afterPath="$PROJECT_DIR$/view/api/endpoints/check.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/view/api/editRanking.go" beforeDir="false" afterPath="$PROJECT_DIR$/view/api/endpoints/editRanking.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/view/api/editTopic.go" beforeDir="false" afterPath="$PROJECT_DIR$/view/api/endpoints/editTopic.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/view/api/getAdminTopics.go" beforeDir="false" afterPath="$PROJECT_DIR$/view/api/endpoints/getAdminTopics.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/view/api/getDocumentation.go" beforeDir="false" afterPath="$PROJECT_DIR$/view/api/endpoints/getDocumentation.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/view/api/getHomepage.go" beforeDir="false" afterPath="$PROJECT_DIR$/view/api/endpoints/getHomepage.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/view/api/getRanking.go" beforeDir="false" afterPath="$PROJECT_DIR$/view/api/endpoints/getRanking.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/view/api/getTopic.go" beforeDir="false" afterPath="$PROJECT_DIR$/view/api/endpoints/getTopic.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/view/api/getUser.go" beforeDir="false" afterPath="$PROJECT_DIR$/view/api/endpoints/getUser.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/view/api/newTopic.go" beforeDir="false" afterPath="$PROJECT_DIR$/view/api/endpoints/newTopic.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/view/api/newUser.go" beforeDir="false" afterPath="$PROJECT_DIR$/view/api/endpoints/newUser.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/view/api/requestController.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/view/api/requestReponder.go" beforeDir="false" afterPath="$PROJECT_DIR$/view/api/responder/requestReponder.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/view/api/searchTopics.go" beforeDir="false" afterPath="$PROJECT_DIR$/view/api/endpoints/searchTopics.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/view/api/searchUsers.go" beforeDir="false" afterPath="$PROJECT_DIR$/view/api/endpoints/searchUsers.go" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -44,8 +64,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Go File" />
         <option value="HTML File" />
+        <option value="Go File" />
       </list>
     </option>
   </component>
@@ -81,19 +101,19 @@
     <property name="node.js.path.for.package.tslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
-    <property name="settings.editor.selected.configurable" value="SQL Dialects" />
+    <property name="settings.editor.selected.configurable" value="Docker" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/view/api/responder" />
+      <recent name="$PROJECT_DIR$/view/api/controller" />
+      <recent name="$PROJECT_DIR$/view/api/endpoints" />
       <recent name="$PROJECT_DIR$/model/sql/calls/Execs" />
       <recent name="$PROJECT_DIR$/model/sql/calls/Exec" />
-      <recent name="$PROJECT_DIR$/model/sql/calls/queries" />
-      <recent name="$PROJECT_DIR$/model/sql/calls/queries/user" />
-      <recent name="$PROJECT_DIR$/view/api" />
     </key>
   </component>
   <component name="RunManager" selected="Docker.Docker">
-    <configuration name="go build Catalog" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
+    <configuration name="go build Catalog" type="GoApplicationRunConfiguration" factoryName="Go Application" nameIsGenerated="true">
       <module name="Catalog" />
       <working_directory value="$PROJECT_DIR$" />
       <kind value="PACKAGE" />
@@ -105,11 +125,6 @@
       <item itemvalue="Docker.Docker" />
       <item itemvalue="Go Build.go build Catalog" />
     </list>
-    <recent_temporary>
-      <list>
-        <item itemvalue="Go Build.go build Catalog" />
-      </list>
-    </recent_temporary>
   </component>
   <component name="ServiceViewManager">
     <option name="viewStates">
@@ -141,14 +156,18 @@
     <proxy>direct</proxy>
   </component>
   <component name="WindowStateProjectService">
-    <state x="560" y="274" key="#Docker" timestamp="1619905640307">
+    <state x="560" y="274" key="#Docker" timestamp="1623881380967">
       <screen x="0" y="25" width="1920" height="1175" />
     </state>
-    <state x="560" y="274" key="#Docker/0.25.1920.1175@0.25.1920.1175" timestamp="1619905640307" />
+    <state x="560" y="274" key="#Docker/0.25.1920.1175@0.25.1920.1175" timestamp="1623881380967" />
     <state x="667" y="162" key="#Dockerfile" timestamp="1619905642426">
       <screen x="0" y="25" width="1920" height="1175" />
     </state>
     <state x="667" y="162" key="#Dockerfile/0.25.1920.1175@0.25.1920.1175" timestamp="1619905642426" />
+    <state x="560" y="287" key="#Path_mapping" timestamp="1623874960489">
+      <screen x="0" y="25" width="1920" height="1175" />
+    </state>
+    <state x="560" y="287" key="#Path_mapping/0.25.1920.1175@0.25.1920.1175" timestamp="1623874960489" />
     <state x="560" y="275" key="#Port_bindings" timestamp="1620425515695">
       <screen x="0" y="25" width="1920" height="1175" />
     </state>
@@ -161,11 +180,11 @@
       <screen x="0" y="0" width="1920" height="1200" />
     </state>
     <state x="0" y="25" width="1920" height="1175" key="#SQL_Resolution_Scopes/0.0.1920.1200@0.0.1920.1200" timestamp="1616895778310" />
-    <state x="0" y="49" width="1920" height="1175" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1620425590313">
+    <state x="0" y="49" width="1920" height="1175" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1623877539660">
       <screen x="0" y="25" width="1920" height="1175" />
     </state>
     <state x="0" y="25" width="1920" height="1175" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1200@0.0.1920.1200" timestamp="1616885205169" />
-    <state x="0" y="49" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.25.1920.1175@0.25.1920.1175" timestamp="1620425590313" />
+    <state x="0" y="49" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.25.1920.1175@0.25.1920.1175" timestamp="1623877539660" />
     <state width="1878" height="318" key="GridCell.Tab.0.bottom" timestamp="1619905642604">
       <screen x="0" y="25" width="1920" height="1175" />
     </state>
@@ -190,18 +209,19 @@
     <state width="1878" height="327" key="GridCell.Tab.0.right/0.0.1920.1200@0.0.1920.1200" timestamp="1616884983317" />
     <state width="1638" height="270" key="GridCell.Tab.0.right/0.25.1680.1025@0.25.1680.1025" timestamp="1618693919454" />
     <state width="1878" height="318" key="GridCell.Tab.0.right/0.25.1920.1175@0.25.1920.1175" timestamp="1619905642603" />
-    <state x="0" y="25" width="1920" height="1175" key="SettingsEditor" timestamp="1616885472122">
-      <screen x="0" y="0" width="1920" height="1200" />
+    <state x="0" y="49" width="1920" height="1175" key="SettingsEditor" timestamp="1623875827369">
+      <screen x="0" y="25" width="1920" height="1175" />
     </state>
     <state x="0" y="25" width="1920" height="1175" key="SettingsEditor/0.0.1920.1200@0.0.1920.1200" timestamp="1616885472122" />
+    <state x="0" y="49" key="SettingsEditor/0.25.1920.1175@0.25.1920.1175" timestamp="1623875827369" />
     <state width="200" height="441" key="SqlResolveConfigurable" timestamp="1616895775862">
       <screen x="0" y="0" width="1920" height="1200" />
     </state>
     <state width="200" height="441" key="SqlResolveConfigurable/0.0.1920.1200@0.0.1920.1200" timestamp="1616895775862" />
-    <state x="721" y="345" key="com.intellij.docker.deployment.ui.DockerPortBindingsField.v173.dialogSize" timestamp="1619907002757">
+    <state x="721" y="345" key="com.intellij.docker.deployment.ui.DockerPortBindingsField.v173.dialogSize" timestamp="1623875457946">
       <screen x="0" y="25" width="1920" height="1175" />
     </state>
-    <state x="721" y="345" key="com.intellij.docker.deployment.ui.DockerPortBindingsField.v173.dialogSize/0.25.1920.1175@0.25.1920.1175" timestamp="1619907002757" />
+    <state x="721" y="345" key="com.intellij.docker.deployment.ui.DockerPortBindingsField.v173.dialogSize/0.25.1920.1175@0.25.1920.1175" timestamp="1623875457946" />
     <state x="625" y="273" width="670" height="691" key="search.everywhere.popup" timestamp="1616885403212">
       <screen x="0" y="0" width="1920" height="1200" />
     </state>

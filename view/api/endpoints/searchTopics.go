@@ -1,9 +1,12 @@
-package api
+package endpoints
 
-import "net/http"
+import (
+	"Catalog/view/api/responder"
+	"net/http"
+)
 
 func SearchTopics(w http.ResponseWriter, req *http.Request) {
-	JsonRequestResponder(w, `
+	responder.JsonRequestResponder(w, `
 {
 	"Placeholder": "searchTopics placeholder"
 }

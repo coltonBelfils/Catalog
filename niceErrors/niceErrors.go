@@ -77,7 +77,7 @@ func FromError(error error) *NiceErrors {
 
 	newErr := NiceErrors{
 		errorMessage:           error.Error(),
-		userFacingErrorMessage: "No error message or error level given",
+		userFacingErrorMessage: "No error message given",
 		errorLevel:             -1,
 	}
 
