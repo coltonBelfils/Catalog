@@ -2,24 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="00f64e74-f24c-41b1-a596-4726df9f5c9e" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/controler/getUser.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/niceErrors/errorTypes.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sqldialects.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sqldialects.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/controler/createUser.go" beforeDir="false" afterPath="$PROJECT_DIR$/controler/createUser.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/go.mod" beforeDir="false" afterPath="$PROJECT_DIR$/go.mod" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/configuration/getConfiguration.go" beforeDir="false" afterPath="$PROJECT_DIR$/model/configuration/getConfiguration.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/sql/calls/execs/userExec.go" beforeDir="false" afterPath="$PROJECT_DIR$/model/sqlDatabase/calls/execs/userExec.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/sql/calls/queries/topicQuery.go" beforeDir="false" afterPath="$PROJECT_DIR$/model/sqlDatabase/calls/queries/topicQuery.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/sql/calls/queries/userQuery.go" beforeDir="false" afterPath="$PROJECT_DIR$/model/sqlDatabase/calls/queries/userQuery.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/sql/connector/connector.go" beforeDir="false" afterPath="$PROJECT_DIR$/model/sqlDatabase/connector/connector.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/niceErrors/niceErrors.go" beforeDir="false" afterPath="$PROJECT_DIR$/niceErrors/niceErrors.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/view/api/controller/requestController.go" beforeDir="false" afterPath="$PROJECT_DIR$/view/api/controller/requestController.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/view/api/endpoints/getAdminTopics.go" beforeDir="false" afterPath="$PROJECT_DIR$/view/api/endpoints/getAdminTopics.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/view/api/endpoints/getUser.go" beforeDir="false" afterPath="$PROJECT_DIR$/view/api/endpoints/getUser.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/view/api/endpoints/newUser.go" beforeDir="false" afterPath="$PROJECT_DIR$/view/api/endpoints/newUser.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/view/api/middleware/authMiddleware.go" beforeDir="false" afterPath="$PROJECT_DIR$/view/api/middleware/authMiddleware.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/view/api/responder/requestReponder.go" beforeDir="false" afterPath="$PROJECT_DIR$/view/api/responder/requestReponder.go" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -96,7 +80,7 @@
     <property name="node.js.path.for.package.tslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
-    <property name="settings.editor.selected.configurable" value="Docker" />
+    <property name="settings.editor.selected.configurable" value="editor.preferences.fonts.default" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -194,11 +178,11 @@
     <state width="1878" height="327" key="GridCell.Tab.0.right/0.0.1920.1200@0.0.1920.1200" timestamp="1616884983317" />
     <state width="1638" height="270" key="GridCell.Tab.0.right/0.25.1680.1025@0.25.1680.1025" timestamp="1618693919454" />
     <state width="1878" height="318" key="GridCell.Tab.0.right/0.25.1920.1175@0.25.1920.1175" timestamp="1624488409136" />
-    <state x="0" y="49" width="1920" height="1175" key="SettingsEditor" timestamp="1623875827369">
+    <state x="0" y="49" width="1920" height="1175" key="SettingsEditor" timestamp="1624580648293">
       <screen x="0" y="25" width="1920" height="1175" />
     </state>
     <state x="0" y="25" width="1920" height="1175" key="SettingsEditor/0.0.1920.1200@0.0.1920.1200" timestamp="1616885472122" />
-    <state x="0" y="49" key="SettingsEditor/0.25.1920.1175@0.25.1920.1175" timestamp="1623875827369" />
+    <state x="0" y="49" key="SettingsEditor/0.25.1920.1175@0.25.1920.1175" timestamp="1624580648293" />
     <state width="200" height="441" key="SqlResolveConfigurable" timestamp="1616895775862">
       <screen x="0" y="0" width="1920" height="1200" />
     </state>

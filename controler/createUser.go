@@ -13,7 +13,7 @@ func CreateUser(username string, email string) (dataTypes.User, *niceErrors.Nice
 
 	//TODO make sure that user doesn't already exist. SQL does that now but it's not super elegant
 
-	//TODO this might need to come from auth0 and not be an endpoint
+	//TODO this might need to come from auth0 and not be an endpoint, OR keep is here and have auth0 call this (or something like it) when a new user is made on the auth0 side of things
 
 	CUExec, nErr := execs.CreateUser(username, email)
 	if nErr != nil {
