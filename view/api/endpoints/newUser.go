@@ -19,7 +19,7 @@ func NewUser(w http.ResponseWriter, r *http.Request) { //the uuid of the user sh
 		var jsonBody map[string]interface{}
 		decodeErr := json.NewDecoder(r.Body).Decode(&jsonBody)
 		if decodeErr != nil {
-			responder.JsonRequestErrorResponder(w, niceErrors.FromErrorFull(decodeErr, "newUser decode json error", "Invalid json in request", niceErrors.INFO), 400)
+			responder.JsonRequestErrorResponder(w, niceErrors.FromErrorFull(decodeErr, "newUser decode json error", "Invalid json in request", niceErrors.JsonConvError, niceErrors.INFO), 400)
 			return
 		}
 
@@ -45,12 +45,12 @@ func NewUser(w http.ResponseWriter, r *http.Request) { //the uuid of the user sh
 
 		jsonConv, martialErr := json.Marshal(userCreated)
 		if martialErr != nil {
-			responder.JsonRequestErrorResponder(w, niceErrors.New(martialErr.Error(), "User should be created but an error occurred", niceErrors.ERROR), 500)
+			responder.JsonRequestErrorResponder(w, niceErrors.New(martialErr.Error(), "User should be created but an error occurred", niceErrors.JsonConvError, niceErrors.ERROR), 500)
 			return
 		}
 
 		responder.JsonRequestResponder(w, string(jsonConv), 200)
 	} else {
-		responder.JsonRequestErrorResponder(w, niceErrors.New("user called getUser with "+r.Method, r.Method+" calls are not allowed", niceErrors.WARN), 405)
+		responder.JsonRequestErrorResponder(w, niceErrors.New("user called getUser with "+r.Method, r.Method+" calls are not allowed", niceErrors.InvalidActionByUserError, niceErrors.WARN), 405)
 	}
 }

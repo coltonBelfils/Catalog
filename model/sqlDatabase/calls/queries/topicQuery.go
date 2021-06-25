@@ -38,12 +38,12 @@ func (q *TopicQuery) RowsProcessor(rows *sql.Rows) *niceErrors.NiceErrors {
 
 		err := rows.Scan(&rawTopicId, &title, &description, &imageUrl, &rawDateCreated)
 		if err != nil {
-			return niceErrors.FromErrorFull(err, "Error scanning sql row", "-", niceErrors.FATAL)
+			return niceErrors.FromErrorFull(err, "Error scanning sqlDatabase row", "-", niceErrors.SqlError, niceErrors.FATAL)
 		}
 
 		var topicId uuid.UUID = uuid.UUID{}
 		if topicId, err = uuid.Parse(rawTopicId); err != nil {
-			return niceErrors.FromErrorFull(err, "Error parsing uuid", "-", niceErrors.FATAL)
+			return niceErrors.FromErrorFull(err, "Error parsing uuid", "-", niceErrors.UnexpectedResultError, niceErrors.FATAL)
 		}
 
 		var dateCreated time.Time

@@ -28,7 +28,7 @@ func AuthMiddleware(next http.Handler) http.Handler {
 	return http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
 		authHeader := strings.Split(r.Header.Get("Authorization"), "Bearer ")
 		if len(authHeader) != 2 {
-			nErr := niceErrors.New("incorrect jwt format, check frontend", "you are not authorized to use this endpoint", niceErrors.WARN)
+			nErr := niceErrors.New("incorrect jwt format, check frontend", "you are not authorized to use this endpoint", niceErrors.InvalidHeaderError, niceErrors.WARN)
 			re.JsonRequestErrorResponder(w, nErr, 401)
 			return
 		}
@@ -48,7 +48,7 @@ func AuthMiddleware(next http.Handler) http.Handler {
 			fmt.Println(ctx.Value("props"))
 			next.ServeHTTP(w, r.WithContext(ctx))
 		} else {
-			nErr := niceErrors.New("incorrect jwt format, check frontend", "you are not authorized to use this endpoint", niceErrors.WARN)
+			nErr := niceErrors.New("incorrect jwt format, check frontend", "you are not authorized to use this endpoint", niceErrors.InvalidAuthError, niceErrors.WARN)
 			re.JsonRequestErrorResponder(w, nErr, 401)
 			return
 		}
@@ -61,13 +61,13 @@ func ValidationKeyGetter(token *jwt.Token) (interface{}, error) {
 	aud := "https://rankingcatalog.com/api"
 	checkAud := token.Claims.(jwt.MapClaims).VerifyAudience(aud, false)
 	if !checkAud {
-		return token, niceErrors.New("invalid audience", "you are not authorized to use this endpoint", niceErrors.INFO)
+		return token, niceErrors.New("invalid audience", "you are not authorized to use this endpoint", niceErrors.InvalidAuthError, niceErrors.INFO)
 	}
 	// Verify 'iss' claim
 	iss := "https://rankingcatalog.us.auth0.com/"
 	checkIss := token.Claims.(jwt.MapClaims).VerifyIssuer(iss, false)
 	if !checkIss {
-		return token, niceErrors.New("invalid issuer", "you are not authorized to use this endpoint", niceErrors.INFO)
+		return token, niceErrors.New("invalid issuer", "you are not authorized to use this endpoint", niceErrors.InvalidAuthError, niceErrors.INFO)
 	}
 
 	cert, nErr := getPemCert(token)
@@ -84,7 +84,7 @@ func getPemCert(token *jwt.Token) (string, *niceErrors.NiceErrors) {
 	resp, err := http.Get("https://rankingcatalog.us.auth0.com/.well-known/jwks.json")
 
 	if err != nil {
-		nErr := niceErrors.FromErrorFull(err, "could not reach: https://rankingcatalog.us.auth0.com/.well-known/jwks.json", "something went wrong", niceErrors.FATAL)
+		nErr := niceErrors.FromErrorFull(err, "could not reach: https://rankingcatalog.us.auth0.com/.well-known/jwks.json", "something went wrong", niceErrors.NoResponseError, niceErrors.FATAL)
 		return cert, nErr
 	}
 	defer resp.Body.Close()
@@ -104,7 +104,7 @@ func getPemCert(token *jwt.Token) (string, *niceErrors.NiceErrors) {
 	}
 
 	if cert == "" {
-		nErr := niceErrors.New("unable to find appropriate key", "something went wrong", niceErrors.INFO)
+		nErr := niceErrors.New("unable to find appropriate key", "something went wrong", niceErrors.InvalidAuthError, niceErrors.INFO)
 		return cert, nErr
 	}
 

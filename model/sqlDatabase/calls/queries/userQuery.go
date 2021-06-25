@@ -38,12 +38,12 @@ func (q *UserQuery) RowsProcessor(rows *sql.Rows) *niceErrors.NiceErrors {
 
 		err := rows.Scan(&rawUserId, &email, &emailVerified, &username, &rawDateCreated)
 		if err != nil {
-			return niceErrors.FromErrorFull(err, "Error scanning sql row", "-", niceErrors.FATAL)
+			return niceErrors.FromErrorFull(err, "Error scanning sqlDatabase row", "-", niceErrors.SqlError, niceErrors.FATAL)
 		}
 
 		var userId uuid.UUID = uuid.UUID{}
 		if userId, err = uuid.Parse(rawUserId); err != nil {
-			return niceErrors.FromErrorFull(err, "Error parsing uuid", "-", niceErrors.FATAL)
+			return niceErrors.FromErrorFull(err, "Error parsing uuid", "-", niceErrors.UnexpectedResultError, niceErrors.FATAL)
 		}
 
 		var dateCreated time.Time

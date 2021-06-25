@@ -13,10 +13,15 @@ type NiceErrors struct {
 	userFacingErrorMessage string
 	stackTrace             string
 	errorLevel             errLevel
+	errorType              ErrorType
 }
 
+type ErrorType string
+
+const defaultErrorType ErrorType = "defaultErrorType"
+
 type niceErrorsJson struct {
-	UserFacingErrorMessage string   `json:"error_message"`
+	UserFacingErrorMessage string `json:"error_message"`
 }
 
 type errLevel int
@@ -29,7 +34,7 @@ const (
 	FATAL
 )
 
-func New(errorMessage string, userErrorMessage string, errorLevel errLevel) *NiceErrors {
+func New(errorMessage string, userErrorMessage string, errorType ErrorType, errorLevel errLevel) *NiceErrors {
 	if errorLevel < 0 || errorLevel > 4 {
 		errorLevel = -1
 	}
@@ -38,6 +43,7 @@ func New(errorMessage string, userErrorMessage string, errorLevel errLevel) *Nic
 		errorMessage:           errorMessage,
 		userFacingErrorMessage: userErrorMessage,
 		stackTrace:             string(debug.Stack()) + "~~END OF STACKTRACE~~",
+		errorType:              errorType,
 		errorLevel:             errorLevel,
 	}
 
@@ -45,7 +51,7 @@ func New(errorMessage string, userErrorMessage string, errorLevel errLevel) *Nic
 	return &newErr
 }
 
-func FromErrorFull(error error, supplementaryErrorMessage string, userErrorMessage string, errorLevel errLevel) *NiceErrors {
+func FromErrorFull(error error, supplementaryErrorMessage string, userErrorMessage string, errorType ErrorType, errorLevel errLevel) *NiceErrors {
 	if err, ok := error.(*NiceErrors); ok {
 		return err
 	}
@@ -63,6 +69,7 @@ func FromErrorFull(error error, supplementaryErrorMessage string, userErrorMessa
 		errorMessage:           error.Error(),
 		userFacingErrorMessage: userErrorMessage,
 		stackTrace:             string(debug.Stack()) + "~~END OF STACKTRACE~~",
+		errorType:              errorType,
 		errorLevel:             errorLevel,
 	}
 
@@ -78,6 +85,7 @@ func FromError(error error) *NiceErrors {
 	newErr := NiceErrors{
 		errorMessage:           error.Error(),
 		userFacingErrorMessage: "No error message given",
+		errorType:              defaultErrorType,
 		errorLevel:             -1,
 	}
 
@@ -99,6 +107,10 @@ func (e *NiceErrors) UserFacingErrorMessage() string {
 
 func (e *NiceErrors) StackTrace() string {
 	return e.stackTrace
+}
+
+func (e *NiceErrors) ErrorType() ErrorType {
+	return e.errorType
 }
 
 func (e *NiceErrors) ErrorLevel() errLevel {

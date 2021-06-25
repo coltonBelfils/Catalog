@@ -34,7 +34,7 @@ func HtmlRequestResponder(w http.ResponseWriter, req *http.Request, htmlTitle st
 
 	content, err := os.Open(htmlFile)
 	if err != nil {
-		return niceErrors.FromErrorFull(err, "couldn't open: " + htmlFile, "-", niceErrors.ERROR)
+		return niceErrors.FromErrorFull(err, "couldn't open: " + htmlFile, "-", niceErrors.FileIOError, niceErrors.ERROR)
 	}
 
 	http.ServeContent(w, req, htmlTitle, time.Time{}, content)

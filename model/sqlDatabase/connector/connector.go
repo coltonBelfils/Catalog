@@ -22,7 +22,7 @@ type SqlExec interface {
 func SendQuery(query SqlQuery) *niceErrors.NiceErrors {
 	conf, nErr := configuration.GetConfiguration()
 	if nErr != nil {
-		return niceErrors.FromErrorFull(nErr, "Cannot read configuration", "-", niceErrors.FATAL)
+		return niceErrors.FromErrorFull(nErr, "Cannot read configuration", "-", niceErrors.ConfigurationError, niceErrors.FATAL)
 	}
 
 	connString := conf.Sql.Username + ":" + conf.Sql.Password + "@tcp(" + conf.Sql.Address + ":" + conf.Sql.Port + ")/" + conf.Sql.DbName + "?parseTime=true"
@@ -30,7 +30,7 @@ func SendQuery(query SqlQuery) *niceErrors.NiceErrors {
 	conn, err := sql.Open("mysql", connString)
 	defer conn.Close()
 	if err != nil {
-		return niceErrors.FromErrorFull(err, "Cannot connect to mysql", "-", niceErrors.FATAL)
+		return niceErrors.FromErrorFull(err, "Cannot connect to mysql", "-", niceErrors.ConfigurationError, niceErrors.FATAL)
 	}
 
 	rows, err := conn.Query(query.QueryString(), query.QueryParameters()...)
@@ -44,7 +44,7 @@ func SendQuery(query SqlQuery) *niceErrors.NiceErrors {
 			paramsStr += strconv.Itoa(i) + ":" + conv + ", "
 		}
 		paramsStr += " }"
-		return niceErrors.FromErrorFull(err, "Error from query execution, query: " + query.QueryString() + ", params: " + paramsStr, "-", niceErrors.ERROR)
+		return niceErrors.FromErrorFull(err, "Error from query execution, query: "+query.QueryString()+", params: "+paramsStr, "-", niceErrors.SqlError, niceErrors.ERROR)
 	}
 
 	nErr = query.RowsProcessor(rows)
@@ -60,7 +60,7 @@ func SendQuery(query SqlQuery) *niceErrors.NiceErrors {
 func SendExec(exec SqlExec) *niceErrors.NiceErrors {
 	conf, nErr := configuration.GetConfiguration()
 	if nErr != nil {
-		return niceErrors.FromErrorFull(nErr, "Cannot read configuration", "-", niceErrors.FATAL)
+		return niceErrors.FromErrorFull(nErr, "Cannot read configuration", "-", niceErrors.ConfigurationError, niceErrors.FATAL)
 	}
 
 	connString := conf.Sql.Username + ":" + conf.Sql.Password + "@tcp(" + conf.Sql.Address + ":" + conf.Sql.Port + ")/" + conf.Sql.DbName + "?parseTime=true"
@@ -68,7 +68,7 @@ func SendExec(exec SqlExec) *niceErrors.NiceErrors {
 	conn, err := sql.Open("mysql", connString)
 	defer conn.Close()
 	if err != nil {
-		return niceErrors.FromErrorFull(err, "Cannot connect to mysql", "-", niceErrors.FATAL)
+		return niceErrors.FromErrorFull(err, "Cannot connect to mysql", "-", niceErrors.ConnectionError, niceErrors.FATAL)
 	}
 
 	_, err = conn.Exec(exec.ExecString(), exec.ExecParameters()...)
@@ -82,7 +82,7 @@ func SendExec(exec SqlExec) *niceErrors.NiceErrors {
 			paramsStr += strconv.Itoa(i) + ":" + conv + ", "
 		}
 		paramsStr += " }"
-		return niceErrors.FromErrorFull(err, "Error from exec execution, exec: " + exec.ExecString() + ", params: " + paramsStr, "-", niceErrors.ERROR)
+		return niceErrors.FromErrorFull(err, "Error from exec execution, exec: "+exec.ExecString()+", params: "+paramsStr, "-", niceErrors.SqlError, niceErrors.ERROR)
 	}
 
 	return nil

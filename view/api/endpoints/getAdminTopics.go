@@ -1,8 +1,8 @@
 package endpoints
 
 import (
-	"Catalog/model/sql/calls/queries"
-	"Catalog/model/sql/connector"
+	"Catalog/model/sqlDatabase/calls/queries"
+	"Catalog/model/sqlDatabase/connector"
 	"Catalog/niceErrors"
 	"Catalog/view/api/responder"
 	"encoding/json"
@@ -29,12 +29,12 @@ func GetAdminTopics(w http.ResponseWriter, r *http.Request) { //the uuid of the 
 
 		jsonConv, martialErr := json.Marshal(topicQuery.Results)
 		if martialErr != nil {
-			responder.JsonRequestErrorResponder(w, niceErrors.New(martialErr.Error(), "User should be created but an error occurred", niceErrors.ERROR), 500)
+			responder.JsonRequestErrorResponder(w, niceErrors.New(martialErr.Error(), "Unable to get admin topics by username: "+username, niceErrors.JsonConvError, niceErrors.ERROR), 500)
 			return
 		}
 
 		responder.JsonRequestResponder(w, string(jsonConv), 200)
 	} else {
-		responder.JsonRequestErrorResponder(w, niceErrors.New("user called getUser with "+r.Method, r.Method+" calls are not allowed", niceErrors.WARN), 405)
+		responder.JsonRequestErrorResponder(w, niceErrors.New("user called getUser with "+r.Method, r.Method+" calls are not allowed", niceErrors.InvalidActionByUserError, niceErrors.WARN), 405)
 	}
 }

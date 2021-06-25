@@ -28,13 +28,13 @@ func GetConfiguration() (Configuration, *niceErrors.NiceErrors) {
 	if conf == nil {
 		jsonData, err := ioutil.ReadFile("configuration.json")
 		if err != nil {
-			return Configuration{}, niceErrors.FromErrorFull(err, "Cannot read configuration.json", "-", niceErrors.FATAL)
+			return Configuration{}, niceErrors.FromErrorFull(err, "Cannot read configuration.json", "-", niceErrors.ConfigurationError, niceErrors.FATAL)
 		}
 
 		conf = &Configuration{}
 		err = json.Unmarshal(jsonData, conf)
 		if err != nil {
-			return Configuration{}, niceErrors.FromErrorFull(err, "Cannot parse configuration.json", "-", niceErrors.FATAL)
+			return Configuration{}, niceErrors.FromErrorFull(err, "Cannot parse configuration.json", "-", niceErrors.ConfigurationError, niceErrors.FATAL)
 		}
 	}
 	return *conf, nil

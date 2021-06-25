@@ -21,16 +21,16 @@ func (u *UserExec) ExecParameters() []interface{} {
 
 func CreateUser(username string, email string) (*UserExec, *niceErrors.NiceErrors) {
 	if len(username) > 20 && len(username) < 0 {
-		return &UserExec{}, niceErrors.New("invalid username: "+username, "invalid username: "+username, niceErrors.INFO)
+		return &UserExec{}, niceErrors.New("invalid username: "+username, "invalid username: "+username, niceErrors.InvalidSqlParameterError, niceErrors.INFO)
 	}
 
 	valid, err := regexp.MatchString("^[a-zA-Z0-9.!#$%&'*+\\/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$", email)
 	if err != nil {
-		return &UserExec{}, niceErrors.FromErrorFull(err, "invalid email: "+email, "Invalid email", niceErrors.INFO)
+		return &UserExec{}, niceErrors.FromErrorFull(err, "invalid email: "+email, "Invalid email", niceErrors.InvalidSqlParameterError, niceErrors.INFO)
 	}
 
 	if !valid {
-		return &UserExec{}, niceErrors.New("invalid email: "+email, "invalid email: "+email, niceErrors.INFO)
+		return &UserExec{}, niceErrors.New("invalid email: "+email, "invalid email: "+email, niceErrors.InvalidSqlParameterError, niceErrors.INFO)
 	}
 
 	return &UserExec{
